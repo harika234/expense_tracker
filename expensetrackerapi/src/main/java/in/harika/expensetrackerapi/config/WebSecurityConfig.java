@@ -22,7 +22,7 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 @EnableWebSecurity
 @Configuration
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
-
+    @Bean
     public JwtRequestFilter authenticationJwtTokenFilter() {
         return new JwtRequestFilter();
     }

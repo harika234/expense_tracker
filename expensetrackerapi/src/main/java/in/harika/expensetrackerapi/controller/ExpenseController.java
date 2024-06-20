@@ -27,6 +27,12 @@ public class ExpenseController {
 //    2) using the query string
 
 //    path variable
+
+    @GetMapping("/test")
+    public  void testexpense() {
+        System.out.println("testing api");
+    }
+
     @GetMapping("/expenses/{id}")
     public Expense getExpenseById(@PathVariable("id") Long id) {
         return expenseService.getExpenseById(id);

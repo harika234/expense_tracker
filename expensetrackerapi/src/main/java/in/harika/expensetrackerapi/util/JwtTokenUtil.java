@@ -53,7 +53,7 @@ public class JwtTokenUtil {
     }
 
     private  <T> T getClaimFromToken(String token, Function<Claims, T> claimsResolver) {
-        final Claims claims = Jwts.parser().setSigningKey(secret).build().parseSignedClaims(token).getPayload();
+        final Claims claims = Jwts.parser().verifyWith(secretKey).build().parseSignedClaims(token).getPayload();
         return claimsResolver.apply(claims);
     }
 
